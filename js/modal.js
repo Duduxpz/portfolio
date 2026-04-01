@@ -18,8 +18,8 @@ const projects = [
     desc: 'Landing page para evento eletrônico em Uberlândia. Interface imersiva com React, animações sofisticadas e sistema de ingressos integrado. Design moderno com tema escuro e efeitos glassmorphism.',
     tags: ['React', 'CSS', 'HTML', 'Next.js'],
     screenshot: './assets/private-mode.jpg',
-    url: 'https://private-mode-udi.com',
-    github: 'https://github.com/Duduxpz/private-mode',
+    url: 'https://duduxpz.github.io/Private/',
+    github: 'https://github.com/Duduxpz/Private',
     screenshotPosition: 'center'
   },
   {
