@@ -15,7 +15,7 @@ const projects = [
     index: 1,
     title: 'PRIVATE MODE',
     subtitle: 'Site para uma festa eletrônica UDI/MG',
-    desc: 'Landing page para evento eletrônico em Uberlândia. Interface imersiva com React, animações sofisticadas e sistema de ingressos integrado. Design moderno com tema escuro e efeitos glassmorphism.',
+    desc: 'Landing page para evento eletrônico em Uberlândia. Interface imersiva com React, animações sofisticadas e sistema de ingressos integrado. Design moderno com tema escuro e efeitos glassmorphism. OBS: O site está hospedado gratuitamente no GitHub Pages, o que pode resultar em tempos de carregamento mais lentos, especialmente para a primeira visita. Recomendamos aguardar alguns segundos para que o conteúdo seja totalmente carregado. Esta com alguns bugs ',
     tags: ['React', 'CSS', 'HTML', 'Next.js'],
     screenshot: './assets/private-mode.jpg',
     url: 'https://duduxpz.github.io/Private/',
