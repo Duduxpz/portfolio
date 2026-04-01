@@ -9,7 +9,7 @@ const projects = [
     screenshot: './assets/dj-lopixx.jpg',
     url: 'https://djlopixx.com',
     github: 'https://github.com/Duduxpz/dj-lopixx',
-    screenshotPosition: 'center 30%'
+    screenshotPosition: 'center 35%'
   },
   {
     index: 1,
