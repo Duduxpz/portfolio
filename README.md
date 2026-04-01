@@ -64,7 +64,7 @@ Sou um desenvolvedor Fullstack júnior com foco em criar aplicações web modern
  
 ## Projetos em Destaque
  
-### 📦 [Nome do Projeto 1](https://github.com/Duduxpz/Lopixx)
+### 📦 [DJ LOPIXX](https://github.com/Duduxpz/Lopixx)
 > Site pra um DJ local.
  
 - **Stack:** React, Node.js, JavaScript, Docker
@@ -72,7 +72,7 @@ Sou um desenvolvedor Fullstack júnior com foco em criar aplicações web modern
  
 ---
  
-### 🛒 [Nome do Projeto 2](https://github.com/Duduxpz/Checkout)
+### 🛒 [Checkout](https://github.com/Duduxpz/Checkout)
 > Finalização de compra site e-commerce.
  
 - **Stack:** HTML, JavaScript, CSS
@@ -80,7 +80,7 @@ Sou um desenvolvedor Fullstack júnior com foco em criar aplicações web modern
  
 ---
  
-### 🔧 [Nome do Projeto 3](https://duduxpz.github.io/Private/)
+### 🔧 [Private MODE](https://duduxpz.github.io/Private/)
 > Site para uma festa eletrônica UDI/MG
  
 - **Stack:** Node.js, JS, MySQL
