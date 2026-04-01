@@ -8,7 +8,7 @@ const projects = [
     tags: ['React', 'CSS', 'HTML', 'Next.js'],
     screenshot: './assets/dj-lopixx.jpg',
     url: 'https://djlopixx.com',
-    github: 'https://github.com/Duduxpz/dj-lopixx',
+    github: 'https://github.com/Duduxpz/Lopixx',
     screenshotPosition: 'center 35%'
   },
   {
@@ -29,8 +29,8 @@ const projects = [
     desc: 'Interface de checkout completa e segura para plataforma de e-commerce. Desenvolvimento com HTML, CSS e JavaScript puro, focado em UX/UI otimizado para conversão com validações avançadas.',
     tags: ['HTML', 'CSS', 'JavaScript', 'UI/UX'],
     screenshot: './assets/image.jpg',
-    url: 'https://checkout-demo.com',
-    github: 'https://github.com/Duduxpz/checkout-interface',
+    url: 'https://github.com/Duduxpz/Checkout',
+    github: 'https://duduxpz.github.io/Checkout/',
     screenshotPosition: 'center'
   }
 ];
