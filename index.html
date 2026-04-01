@@ -71,7 +71,7 @@
     <h2 class="sec-title">Projetos em destaque</h2>
     <div class="proj-grid">
 
-      <a href="#" class="proj-card reveal">
+      <div class="proj-card reveal" tabindex="0" role="button" onclick="openModal(0)">
         <div class="proj-thumb t1">
           <img src="./assets/dj-lopixx.jpg" alt="DJ LOPIXX" class="proj-image">
           <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
@@ -81,9 +81,9 @@
           <p>Site pra um DJ local</p>
           <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">CSS</span><span class="proj-tag">HTML</span><span class="proj-tag">Next.js</span></div>
         </div>
-      </a>
+      </div>
 
-      <a href="#" class="proj-card reveal">
+      <div class="proj-card reveal" tabindex="0" role="button" onclick="openModal(1)">
         <div class="proj-thumb t2">
           <img src="./assets/private-mode.jpg" alt="PRIVATE MODE" class="proj-image">
           <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
@@ -93,9 +93,9 @@
           <p>Site para uma festa eletronica UDI/MG</p>
           <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">CSS</span><span class="proj-tag">HTML</span><span class="proj-tag">Next.js</span></div>
         </div>
-      </a>
+      </div>
 
-      <a href="#" class="proj-card reveal">
+      <div class="proj-card reveal" tabindex="0" role="button" onclick="openModal(2)">
         <div class="proj-thumb t3">
           <img src="./assets/image.jpg" alt="Checkout" class="proj-image">
           <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
@@ -105,7 +105,7 @@
           <p>Finalização de compra site e-commerce</p>
           <div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">JavaScript</span><span class="proj-tag">UI/UX</span></div>
         </div>
-      </a>
+      </div>
 
      <!-- <a href="#" class="proj-card reveal">
         <div class="proj-thumb t4">
@@ -278,6 +278,37 @@
   </div>
 </footer>
 
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="close-btn" onclick="closeModal()">&times;</button>
+    
+    <div class="browser-bar">
+      <div class="browser-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="browser-url" id="browserUrl"></div>
+    </div>
+
+    <img id="modalScreenshot" src="" alt="Screenshot" class="modal-screenshot">
+
+    <div class="modal-body">
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      
+      <div class="modal-tags" id="modalTags"></div>
+      
+      <div class="modal-actions">
+        <a id="demoBtn" href="" target="_blank" class="btn-demo">Ver site</a>
+        <a id="ghBtn" href="" target="_blank" class="btn-gh">GitHub</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/script.js" defer></script>
+<script src="js/modal.js" defer></script>
 </body>
 </html>
