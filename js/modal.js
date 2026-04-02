@@ -4,7 +4,7 @@ const projects = [
     index: 0,
     title: 'DJ LOPIXX',
     subtitle: 'Site pra um DJ local',
-    desc: 'Website moderno e responsivo para um DJ local. Desenvolvido com React e Next.js, apresentando portfolio de trabalhos, agenda de eventos e integração com redes sociais.',
+    desc: 'Website moderno e responsivo para um DJ local. Desenvolvido com React e Node.js, apresentando portfolio de trabalhos, agenda de eventos e integração com redes sociais.',
     tags: ['React', 'CSS', 'HTML', 'Node.js'],
     screenshot: './assets/dj-lopixx.jpg',
     url: 'https://djlopixx.com',
