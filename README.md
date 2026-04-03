@@ -5,7 +5,7 @@
 </p>
  
 <p align="center">
-  <a href="https://linkedin.com/in/seu-usuario" target="_blank">
+  <a href="https://linkedin.com/in/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://github.com/Duduxpz" target="_blank">
@@ -92,7 +92,7 @@ Se quiser trocar uma ideia, colaborar em algum projeto ou apenas dizer oi — fi
  
 | Canal | Link |
 |---|---|
-| 💼 LinkedIn | [linkedin.com/in/seu-usuario](https://linkedin.com/in/seu-usuario) |
+| 💼 LinkedIn | [linkedin.com/in/seu-usuario](https://linkedin.com/in/) |
 | 🐙 GitHub | [github.com/seu-usuario](https://github.com/Duduxpz) |
 | 📧 Email | odraudemuciopereira@gmail.com |
 | 📸 Instagram | [@seu-usuario](https://instagram.com/_dudupxz) |
