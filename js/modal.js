@@ -2,20 +2,20 @@
 const projects = [
   {
     index: 0,
-    title: 'DJ LOPIXX',
+    title: 'StackByte',
     subtitle: 'Site pra um DJ local',
     desc: 'Website moderno e responsivo para um DJ local. Desenvolvido com React e Node.js, apresentando portfolio de trabalhos, agenda de eventos e integração com redes sociais.',
     tags: ['React', 'CSS', 'HTML', 'Node.js'],
     screenshot: './assets/dj-lopixx.jpg',
-    url: 'https://djlopixx.com',
-    github: 'https://github.com/Duduxpz/Lopixx',
+    url: 'https://www.stackbyte.com.br',
+    github: 'https://github.com/Duduxpz/StackByte',
     screenshotPosition: 'center 35%'
   },
   {
     index: 1,
     title: 'PRIVATE MODE',
     subtitle: 'Site para uma festa eletrônica UDI/MG',
-    desc: 'Landing page para evento eletrônico em Uberlândia. Interface imersiva com React, animações sofisticadas e sistema de ingressos integrado. Design moderno com tema escuro e efeitos glassmorphism. OBS: O site está hospedado gratuitamente no GitHub Pages, o que pode resultar em tempos de carregamento mais lentos, especialmente para a primeira visita. Recomendamos aguardar alguns segundos para que o conteúdo seja totalmente carregado. Esta com alguns bugs ',
+    desc: 'Landing page para evento eletrônico em Uberlândia. Interface imersiva com React, animações sofisticadas e sistema de ingressos integrado. Design moderno com tema escuro e efeitos glassmorphism. OBS: O site está hospedado gratuitamente no GitHub Pages, o que pode resultar em tempos de carregamento mais lentos, especialmente para a primeira visita. Recomendamos aguardar alguns segundos para que o conteúdo seja totalmente carregado. Esta com alguns bugs, PAROU DESENVOLVIMENTO DEVIDO CANCELAMENTO DO CLIENTE ',
     tags: ['React', 'CSS', 'HTML', 'Node.js'],
     screenshot: './assets/private-mode.jpg',
     url: 'https://duduxpz.github.io/Private/',
