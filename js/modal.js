@@ -3,7 +3,7 @@ const projects = [
   {
     index: 0,
     title: 'StackByte',
-    subtitle: 'Site pra um DJ local',
+    subtitle: 'Empresa de Software',
     desc: 'Website moderno e responsivo para um DJ local. Desenvolvido com React e Node.js, apresentando portfolio de trabalhos, agenda de eventos e integração com redes sociais.',
     tags: ['React', 'CSS', 'HTML', 'Node.js'],
     screenshot: './assets/dj-lopixx.jpg',
