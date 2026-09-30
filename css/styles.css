@@ -87,14 +87,10 @@ nav {
   gap: 0;
 }
 
-.hero img {
-  margin-left: 2rem; /* ajuste esse valor até ficar do jeito que você quer */
-}
 
-.avatar-ring {
-  position: relative;
-  width: 100px; height: 100px;
-  margin-bottom: 2rem;
+ .avatar-ring {
+   position: relative;
+   width: 100px; height: 100px;
 }
 .avatar-ring::before {
   content:'';
