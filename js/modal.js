@@ -1,100 +1,175 @@
-// Projects data
-const projects = [
-  {
-    index: 0,
-    title: 'StackByte',
-    subtitle: 'Empresa de Software',
-    desc: 'Site de uma empresa de desenvolvimento de webs e outras tecnologias',
-    tags: ['React', 'CSS', 'HTML', 'Node.js'],
-    screenshot: './assets/Prancheta 16 cópia 9.png',
-    url: 'https://www.stackbyte.com.br',
-    github: 'https://github.com/Duduxpz/StackByte',
-    screenshotPosition: 'center 35%'
-  },
-  {
-    index: 1,
-    title: 'PRIVATE MODE',
-    subtitle: 'Site para uma festa eletrônica UDI/MG',
-    desc: 'Landing page para evento eletrônico em Uberlândia. Interface imersiva com React, animações sofisticadas e sistema de ingressos integrado. Design moderno com tema escuro e efeitos glassmorphism. OBS: O site está hospedado gratuitamente no GitHub Pages, o que pode resultar em tempos de carregamento mais lentos, especialmente para a primeira visita. Recomendamos aguardar alguns segundos para que o conteúdo seja totalmente carregado. Esta com alguns bugs, PAROU DESENVOLVIMENTO DEVIDO CANCELAMENTO DO CLIENTE ',
-    tags: ['React', 'CSS', 'HTML', 'Node.js'],
-    screenshot: './assets/private-mode.jpg',
-    url: 'https://duduxpz.github.io/Private/',
-    github: 'https://github.com/Duduxpz/Private',
-    screenshotPosition: 'center'
-  },
-  {
-    index: 2,
-    title: 'Checkout',
-    subtitle: 'Finalização de compra site e-commerce',
-    desc: 'Interface de checkout completa e segura para plataforma de e-commerce. Desenvolvimento com HTML, CSS e JavaScript puro, focado em UX/UI otimizado para conversão com validações avançadas.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'UI/UX'],
-    screenshot: './assets/image.jpg',
-    url: 'https://github.com/Duduxpz/Checkout',
-    github: 'https://duduxpz.github.io/Checkout/',
-    screenshotPosition: 'center'
+// Project content stays in the semantic cards for SEO and is read as configuration here.
+const projectCards = [...document.querySelectorAll('#projects .proj-card')];
+const parseList = (value) => {
+  try {
+    const parsed = JSON.parse(value || '[]');
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
   }
-];
+};
+const projects = projectCards.map((card) => {
+  const image = card.querySelector('.proj-image');
+  const liveLink = card.querySelector('.btn-project-link');
+  return {
+    title: card.querySelector('h3')?.textContent.trim() || 'Projeto',
+    subtitle: card.dataset.subtitle || '',
+    description: card.querySelector('.proj-body > p')?.textContent.trim() || '',
+    technologies: [...card.querySelectorAll('.proj-tag')].map((tag) => tag.textContent.trim()),
+    gallery: parseList(card.dataset.gallery).length
+      ? parseList(card.dataset.gallery)
+      : image ? [image.getAttribute('src')] : [],
+    url: liveLink?.href || '',
+    repoUrl: card.dataset.repoUrl || '',
+    features: parseList(card.dataset.features),
+    imageAlt: image?.alt || '',
+    imagePosition: card.dataset.imagePosition || 'center',
+    note: card.dataset.note || ''
+  };
+});
 
-// DOM Elements
-const modalOverlay = document.getElementById('modalOverlay');
-const modalTitle = document.getElementById('modalTitle');
-const modalDesc = document.getElementById('modalDesc');
-const modalTags = document.getElementById('modalTags');
-const modalScreenshot = document.getElementById('modalScreenshot');
+const overlay = document.getElementById('modalOverlay');
+const dialog = overlay.querySelector('.modal');
+const title = document.getElementById('modalTitle');
+const subtitle = document.getElementById('modalSubtitle');
+const description = document.getElementById('modalDesc');
+const tags = document.getElementById('modalTags');
+const features = document.getElementById('modalFeatures');
+const screenshot = document.getElementById('modalScreenshot');
 const browserUrl = document.getElementById('browserUrl');
-const demoBtn = document.getElementById('demoBtn');
-const ghBtn = document.getElementById('ghBtn');
+const demoButton = document.getElementById('demoBtn');
+const repoButton = document.getElementById('repoBtn');
+const note = document.getElementById('projectNote');
+const galleryControls = document.getElementById('galleryControls');
+const galleryCount = document.getElementById('galleryCount');
+const imageFallback = document.getElementById('imageFallback');
+let selectedProject = null;
+let selectedImage = 0;
+let returnFocusTo = null;
 
-// Open Modal
-function openModal(index) {
+function renderGalleryImage() {
+  const image = selectedProject?.gallery?.[selectedImage];
+  screenshot.classList.add('is-changing');
+  imageFallback.hidden = true;
+
+  if (!image) {
+    screenshot.removeAttribute('src');
+    screenshot.hidden = true;
+    imageFallback.hidden = false;
+    return;
+  }
+
+  screenshot.hidden = false;
+  screenshot.alt = selectedProject.imageAlt || `Preview de ${selectedProject.title} — imagem ${selectedImage + 1}`;
+  screenshot.style.objectPosition = selectedProject.imagePosition || 'center';
+  screenshot.src = image;
+  galleryCount.textContent = `${selectedImage + 1} / ${selectedProject.gallery.length}`;
+}
+
+function openModal(index, trigger) {
   const project = projects[index];
-  
-  // Set content
-  modalTitle.textContent = project.title;
-  modalDesc.textContent = project.desc;
-  browserUrl.textContent = project.url.replace('https://', '').replace('http://', '');
-  modalScreenshot.src = project.screenshot;
-  modalScreenshot.style.objectPosition = project.screenshotPosition || 'center';
-  demoBtn.href = project.url;
-  ghBtn.href = project.github;
-  
-  // Set tags
-  modalTags.innerHTML = '';
-  project.tags.forEach(tag => {
-    const tagEl = document.createElement('span');
-    tagEl.className = 'modal-tag';
-    tagEl.textContent = tag;
-    modalTags.appendChild(tagEl);
+  if (!project) return;
+
+  selectedProject = project;
+  selectedImage = 0;
+  returnFocusTo = trigger || document.activeElement;
+  title.textContent = project.title;
+  subtitle.textContent = project.subtitle || '';
+  description.textContent = project.description || '';
+  browserUrl.textContent = project.url ? new URL(project.url).host : 'Preview local';
+  demoButton.href = project.url || '#';
+  demoButton.hidden = !project.url;
+  repoButton.href = project.repoUrl || '#';
+  repoButton.hidden = !project.repoUrl;
+  note.textContent = project.note || '';
+  note.hidden = !project.note;
+
+  tags.replaceChildren(...(project.technologies || []).map((technology) => {
+    const tag = document.createElement('span');
+    tag.className = 'modal-tag';
+    tag.textContent = technology;
+    return tag;
+  }));
+  features.replaceChildren(...(project.features || []).map((feature) => {
+    const item = document.createElement('li');
+    item.textContent = feature;
+    return item;
+  }));
+
+  galleryControls.hidden = (project.gallery?.length || 0) < 2;
+  renderGalleryImage();
+  overlay.hidden = false;
+  document.body.classList.add('modal-open');
+  requestAnimationFrame(() => {
+    overlay.classList.add('active');
+    dialog.focus();
   });
-  
-  // Show modal
-  modalOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
 }
 
-// Close Modal
 function closeModal() {
-  modalOverlay.classList.remove('active');
-  document.body.style.overflow = 'auto';
+  if (overlay.hidden) return;
+  overlay.classList.remove('active');
+  document.body.classList.remove('modal-open');
+  screenshot.removeAttribute('src');
+  selectedProject = null;
+  overlay.hidden = true;
+  returnFocusTo?.focus();
 }
 
-// Event Listeners
+document.querySelectorAll('[data-project-preview]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const index = projectCards.indexOf(button.closest('.proj-card'));
+    openModal(index, button);
+  });
+});
 
-// Close on overlay click (not on modal itself)
-modalOverlay.addEventListener('click', (e) => {
-  if (e.target === modalOverlay) {
+document.getElementById('closeModal').addEventListener('click', closeModal);
+overlay.addEventListener('click', (event) => {
+  if (event.target === overlay) closeModal();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (overlay.hidden) return;
+  if (event.key === 'Escape') {
+    event.preventDefault();
     closeModal();
+    return;
+  }
+
+  if (event.key === 'Tab') {
+    const focusable = [...dialog.querySelectorAll('a[href]:not([hidden]), button:not([hidden])')]
+      .filter((element) => !element.disabled && element.offsetParent !== null);
+    if (!focusable.length) {
+      event.preventDefault();
+      dialog.focus();
+      return;
+    }
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && (document.activeElement === first || document.activeElement === dialog)) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 });
 
-// Close on Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-    closeModal();
-  }
+document.getElementById('galleryPrevious').addEventListener('click', () => {
+  if (!selectedProject?.gallery?.length) return;
+  selectedImage = (selectedImage - 1 + selectedProject.gallery.length) % selectedProject.gallery.length;
+  renderGalleryImage();
+});
+document.getElementById('galleryNext').addEventListener('click', () => {
+  if (!selectedProject?.gallery?.length) return;
+  selectedImage = (selectedImage + 1) % selectedProject.gallery.length;
+  renderGalleryImage();
 });
 
-// Prevent body scroll when modal is open
-document.addEventListener('DOMContentLoaded', () => {
-  // Modal is already set up above
+screenshot.addEventListener('load', () => screenshot.classList.remove('is-changing'));
+screenshot.addEventListener('error', () => {
+  screenshot.hidden = true;
+  imageFallback.hidden = false;
+  screenshot.classList.remove('is-changing');
 });
