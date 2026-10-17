@@ -111,6 +111,32 @@ section.n{padding:100px 0}
 .m{display:block;font-size:clamp(28px,7vw,100px);letter-spacing:-.045em;font-weight:600;line-height:1.05;margin:6px 0 30px;word-break:break-all}.m:hover{color:var(--acx)}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:32px 0;border-top:1px solid var(--line);font:13px var(--mono);color:var(--mut)}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
+.wa{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin:8px 0 32px;padding:clamp(22px,4vw,44px);border:1px solid var(--line);border-radius:28px;background:color-mix(in srgb,var(--card) 80%,transparent);backdrop-filter:blur(14px);position:relative;overflow:hidden}
+.wa::before{content:"";position:absolute;width:440px;height:440px;right:-120px;top:-170px;background:radial-gradient(circle,#25d36644,transparent 65%);pointer-events:none}
+.wa-l{position:relative}
+.sub2{color:var(--mut);font-size:clamp(16px,1.6vw,19px);max-width:440px}
+.wq{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0}
+.wq button{font:13px var(--mono);padding:9px 16px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--mut);cursor:pointer;transition:.2s}
+.wq button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.wbtn{display:inline-flex;gap:12px;align-items:center;font:600 17px var(--sans);padding:17px 30px;border:0;border-radius:16px;background:#25d366;color:#04210f;cursor:pointer;box-shadow:0 14px 40px -12px #25d366aa;transition:transform .25s,box-shadow .25s}
+.wbtn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 20px 50px -12px #25d366cc}
+.wbtn svg{width:22px;height:22px}
+.wnote{display:block;margin-top:16px;font:12px var(--mono);color:var(--mut)}
+.ph{position:relative;max-width:340px;width:100%;margin-left:auto;border:1px solid var(--line);border-radius:26px;background:var(--bg);overflow:hidden;box-shadow:0 30px 70px -30px #0006}
+.ph-h{display:flex;gap:12px;align-items:center;padding:14px 16px;background:#128c7e;color:#fff}
+.av2{width:38px;height:38px;border-radius:50%;background:var(--ac);color:#0a0a0a;display:grid;place-items:center;font:700 16px var(--sans);font-style:normal}
+.ph-h b{display:block;font-size:15px;line-height:1.1}.ph-h small{font-size:12px;opacity:.85}
+.ph-b{padding:18px 14px;min-height:240px;display:flex;flex-direction:column;gap:10px;background:color-mix(in srgb,var(--fg) 5%,var(--bg))}
+.bub{max-width:84%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.4}
+.bub.me{align-self:flex-end;background:#d9fdd3;color:#0b1f0e;border-bottom-right-radius:4px}
+.bub.them{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
+.pop{animation:pop .45s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.9)}}
+.dots{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--mut);animation:dt 1.2s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes dt{40%{transform:translateY(-4px);opacity:.4}}
+@media(max-width:860px){.wa{grid-template-columns:1fr}.ph{margin:0}}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}.tm span,.pp div{opacity:1;transform:none}}
 </style>
 </head>
@@ -158,15 +184,31 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;paddin
 
 <section id="exp" class="n w">
   <p class="eye rv">05 / experiência</p><h2 class="rv">Trajetória</h2>
-  <div class="r rv"><span>2026 — hoje</span><div><h3>Dev Full Stack Junior · Empresa Inovamovil</h3><p>Consultor de soluções tecnológicas e desenvolvimento de software.</p></div></div>
-  <div class="r rv"><span>2022 — 2026</span><div><h3>Dev Full Stack · Formado</h3><p>APIs em Node e interfaces em React para fintech; reduzi o tempo de resposta em 60%.</p></div></div>
-  <div class="r rv"><span>2020 — 2022</span><div><h3>Estudando para ser desenvolvedor</h3><p>Primeiros produtos em React e TypeScript, com foco em acessibilidade e design system.</p></div></div>
+  <div class="r rv"><span>2024 — hoje</span><div><h3>Dev Full Stack Junior · Inovamobil</h3><p>Focado em inovação e desenvolvimento de soluções tecnológicas.</p></div></div>
+  <div class="r rv"><span>2022 — 2024</span><div><h3>Dev Full Stack · Formado</h3><p>APIs em Node e interfaces em React para fintech; reduzi o tempo de resposta em 60%.</p></div></div>
+  <div class="r rv"><span>2019 — 2023</span><div><h3>Estundando para crescer</h3><p>Primeiros produtos em React e TypeScript, com foco em acessibilidade e design system.</p></div></div>
 </section>
 <section id="contact" class="n w">
-  <p class="eye rv">06 / contato</p><h2 class="rv">Vamos construir algo <i>juntos</i>?</h2>
-  <a class="m rv" href="mailto:ola@seunome.dev">...</a>
-  <div class="cta rv"><button class="btn p" id="cp">Copiar e-mail</button><a class="btn" href="#">Baixar currículo ↓</a></div>
-  <footer><span>© 2026 Eduardo Múcio</span><span>Feito com TypeScript e café</span></footer>
+  <p class="eye rv">06 / contato</p><h2 class="rv">Vamos <i>conversar</i>?</h2>
+  <div class="wa rv">
+    <div class="wa-l">
+      <p class="sub2">Conta pra mim sobre o seu projeto. Eu respondo rápido e sem enrolação.</p>
+      <div class="wq" id="wq">
+        <button class="on" data-m="Oi, Dudu! Vi seu portfólio e quero conversar sobre um projeto.">Quero um projeto</button>
+        <button data-m="Oi, Dudu! Vi seu portfólio e temos uma vaga que combina com você.">Tenho uma vaga</button>
+        <button data-m="Oi, Dudu! Preciso de um freelancer full stack. Podemos conversar?">Freelance</button>
+        <button data-m="Oi, Dudu! Passei pelo seu portfólio só para dar um oi.">Só dar um oi</button>
+      </div>
+      <button class="wbtn" id="wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Chamar no WhatsApp</button>
+      <span class="wnote">A conversa abre direto no seu WhatsApp, já com a mensagem pronta.</span>
+    </div>
+    <div class="ph">
+      <div class="ph-h"><i class="av2">D</i><div><b>Dudu Dev</b><small>online agora</small></div></div>
+      <div class="ph-b"><div class="bub me" id="bme"></div><div class="dots" id="bdt"><i></i><i></i><i></i></div><div class="bub them" id="bth">Opa! Já te respondo 👋</div></div>
+    </div>
+  </div>
+  <a class="btn" href="#">Baixar currículo ↓</a>
+  <footer><span>© 2026 Dudu Dev</span><span>Feito com TypeScript e café</span></footer>
 </section>
 
 <script>
@@ -193,7 +235,21 @@ $('[data-n]').forEach(function(el){var t=+el.dataset.n,s=el.dataset.s||'',st=per
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
 $('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*70+'ms';io.observe(el)});
 $('.card').forEach(function(c){c.classList.add('in')});
-var cp=document.getElementById('cp');cp.onclick=function(){try{navigator.clipboard.writeText('ola@seunome.dev')}catch(e){}cp.textContent='Copiado ✓';setTimeout(function(){cp.textContent='Copiar e-mail'},1800)};
+})();
+</script>
+<script>
+/* WhatsApp: o número NÃO aparece na página. Fica codificado em base64 e só vira link ao clicar.
+   Para trocar: abra o console do navegador (F12) e rode  btoa('55DDNUMERO')  (ex.: btoa('5537999998888')).
+   Cole o resultado na variável P abaixo. */
+(function(){
+var P='NTUwMDAwMDAwMDAwMA==';
+var msg=document.querySelector('#wq button.on').dataset.m,t;
+var me=document.getElementById('bme'),dt=document.getElementById('bdt'),th=document.getElementById('bth');
+function pop(el){el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop')}
+function show(m){me.textContent=m;pop(me);th.style.display='none';dt.style.display='flex';pop(dt);clearTimeout(t);t=setTimeout(function(){dt.style.display='none';th.style.display='block';pop(th)},1200)}
+document.querySelectorAll('#wq button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#wq button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');msg=b.dataset.m;show(msg)}});
+var shown=false,io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!shown){shown=true;show(msg)}},{threshold:.4});io.observe(document.querySelector('.ph'));
+document.getElementById('wa').onclick=function(){var n=atob(P);if(n==='5500000000000'){alert('Configure seu número no código (variável P).');return}window.open('https://wa.me/'+n+'?text='+encodeURIComponent(msg),'_blank','noopener')};
 })();
 </script>
 </body>
