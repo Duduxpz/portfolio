@@ -1,310 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Dudu.dev</title>
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dudu Dev — Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<div class="bg"></div><div class="orb"></div>
+<nav><div class="w"><a class="logo" href="#hero">~/seu-nome</a><div><a href="#story">Camadas</a><a href="#work">Projetos</a><a href="#exp">Experiência</a><a href="#contact">Contato</a><button id="th" aria-label="Alternar tema">◐</button></div></div><span id="pg"></span></nav>
 
-<!-- orbs -->
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
+<section id="hero" style="height:170vh"><div class="pin w"><div class="hi">
+  <span class="av">Disponível para novos projetos</span>
+  <h1>Full stack do <i>banco</i> ao <i>pixel</i>.</h1>
+  <p class="sub">Construo produtos web completos: APIs escaláveis, interfaces rápidas e infraestrutura confiável.</p>
+  <div class="cta"><a class="btn p" href="#story">Ver como trabalho ↓</a><a class="btn" href="https://github.com" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+  <div class="stats"><div><b data-n="6" data-s="+">0</b><span>anos</span></div><div><b data-n="40" data-s="+">0</b><span>projetos</span></div><div><b data-n="12" data-s="M">0</b><span>req/mês</span></div><div><b data-n="99" data-s="%">0</b><span>uptime</span></div></div>
+</div><span class="hint">↓ role para continuar</span></div></section>
 
-<!-- canvas particles -->
-<canvas id="bgCanvas"></canvas>
-
-<!-- nav -->
-<nav>
-  <span class="nav-logo">dudu.dev</span>
-
-  <div class="nav-dot"></div>
-</nav>
-
-<div class="page">
-
-  <!-- ══ HERO ══ -->
-  <section class="hero">
-
-    <div class="avatar-ring">
-      <div class="avatar-inner"><img src="./assets/Fotoperfil.png" alt="Avatar"></div>
-    </div>
-
-    <div class="hero-tag">Fullstack Developer</div>
-
-    <h1>
-      Olá, sou<br>
-      <span class="blue">Dudu</span><br>
-      <span class="dim">dev fullstack</span>
-    </h1>
-
-    <p class="hero-desc">
-      Transformo necessidades em aplicações reais, envolventes e funcionais. Do backend robusto ao frontend que encanta.
-    </p>
-
-    <div class="tech-row">
-      <span class="tech-pill"><span class="dot"></span>React</span>
-      <span class="tech-pill"><span class="dot"></span>Node.js</span>
-      <span class="tech-pill"><span class="dot"></span>TypeScript</span>
-      <span class="tech-pill"><span class="dot"></span>PostgreSQL</span>
-      <span class="tech-pill"><span class="dot"></span>Docker</span>
-    </div>
-
-    <div class="hero-ctas">
-      <a href="#projects" class="btn-glow">Ver projetos</a>
-      <a href="#contact"  class="btn-outline">Entrar em contato</a>
-    </div>
-
-  </section>
-
-  <!-- ══ PROJECTS ══ -->
-  <section id="projects">
-    <p class="sec-label">Meu trabalho</p>
-    <h2 class="sec-title">Projetos em destaque</h2>
-    <div class="proj-grid">
-
-      <div class="proj-card reveal" tabindex="0" role="button" onclick="openModal(0)">
-        <div class="proj-thumb t1">
-          <img src="./assets/Prancheta 16 cópia 9.png" alt="StackByte" class="proj-image">
-          <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
-        </div>
-        <div class="proj-body">
-          <h3>StackByte</h3>
-          <p>Site pra Desenvolvimento e Tecnologias de sistemas</p>
-          <div class="proj-tags"><span class="proj-tag">JavaScript</span><span class="proj-tag">CSS</span><span class="proj-tag">React</span><span class="proj-tag">Node.js</span></div>
-        </div>
-      </div>
-
-      <div class="proj-card reveal" tabindex="0" role="button" onclick="openModal(1)">
-        <div class="proj-thumb t2">
-          <img src="./assets/private-mode.jpg" alt="PRIVATE MODE" class="proj-image">
-          <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
-        </div>
-        <div class="proj-body">
-          <h3>PRIVATE MODE</h3>
-          <p>Site para uma festa eletronica UDI/MG</p>
-          <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">CSS</span><span class="proj-tag">HTML</span><span class="proj-tag">Node.js</span></div>
-        </div>
-      </div>
-
-      <div class="proj-card reveal" tabindex="0" role="button" onclick="openModal(2)">
-        <div class="proj-thumb t3">
-          <img src="./assets/image.jpg" alt="Checkout" class="proj-image">
-          <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
-        </div>
-        <div class="proj-body">
-          <h3>Checkout</h3>
-          <p>Finalização de compra site e-commerce</p>
-          <div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">JavaScript</span><span class="proj-tag">UI/UX</span></div>
-        </div>
-      </div>
-
-     <!-- <a href="#" class="proj-card reveal">
-        <div class="proj-thumb t4">
-          <div class="thumb-grid">
-            <div class="tg-bar" style="background:linear-gradient(90deg,#8b5cf6,var(--indigo))"></div>
-            <div class="tg-main"></div>
-            <div class="tg-side"></div>
-            <div class="tg-side"></div>
-          </div>
-          <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
-        </div>
-        <div class="proj-body">
-          <h3>Zingen</h3>
-          <p>Landing page de aplicativo de karaokê</p>
-          <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">Tailwind</span></div>
-        </div>
-      </a>
-
-     <a href="#" class="proj-card reveal">
-        <div class="proj-thumb t5">
-          <div class="thumb-grid">
-            <div class="tg-bar" style="background:linear-gradient(90deg,#10b981,var(--cyan))"></div>
-            <div class="tg-main"></div>
-            <div class="tg-side"></div>
-            <div class="tg-side"></div>
-          </div>
-          <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
-        </div>
-        <div class="proj-body">
-          <h3>Refund</h3>
-          <p>Sistema de pedido e acompanhamento de reembolso</p>
-          <div class="proj-tags"><span class="proj-tag">Vue</span><span class="proj-tag">FastAPI</span></div>
-        </div>
-      </a>
-
-      <a href="#" class="proj-card reveal">
-        <div class="proj-thumb t6">
-          <div class="thumb-grid">
-            <div class="tg-bar" style="background:linear-gradient(90deg,var(--blue-bright),var(--blue))"></div>
-            <div class="tg-main"></div>
-            <div class="tg-side"></div>
-            <div class="tg-side"></div>
-          </div>
-          <div class="proj-overlay"><span class="proj-overlay-icon">↗</span></div>
-        </div>
-        <div class="proj-body">
-          <h3>Página de turismo</h3>
-          <p>Guia de viagem para Busan, Coreia do Sul</p>
-          <div class="proj-tags"><span class="proj-tag">Next.js</span><span class="proj-tag">Maps</span></div>
-        </div>
-      </a>-->
-
-    </div>
-  </section>
-
-</div><!-- /page -->
-
-<!-- ══ SERVICES ══ -->
-<section id="services" class="svc-section">
-  <div class="page">
-    <p class="sec-label">Meus serviços</p>
-    <h2 class="sec-title">Como posso ajudar</h2>
-    <div class="svc-wrap reveal">
-      <div class="svc-inner">
-        <div class="svc-grid">
-
-          <div class="svc-item">
-            <div class="svc-icon">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="1.5">
-                <rect x="2" y="3" width="20" height="14" rx="2"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
-                <line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <h3>Websites e Apps</h3>
-            <p>Desenvolvimento de interfaces modernas e responsivas</p>
-          </div>
-
-          <div class="svc-item" style="border-left:1px solid rgba(59,130,246,0.15);border-right:1px solid rgba(59,130,246,0.15)">
-            <div class="svc-icon">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5">
-                <ellipse cx="12" cy="5" rx="9" ry="3"/>
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-              </svg>
-            </div>
-            <h3>API e banco de dados</h3>
-            <p>Criação de serviços robustos do sistema</p>
-          </div>
-
-          <div class="svc-item">
-            <div class="svc-icon">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="1.5">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </div>
-            <h3>DevOps</h3>
-            <p>Gestão e infraestrutura da aplicação</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
+<section id="story" style="height:520vh"><div class="pin w st">
+  <div class="txt">
+    <div class="sc"><p class="eye">01 / front-end</p><h2>Interfaces que <i>respondem</i> rápido</h2><p>React, TypeScript e Next.js com foco em performance, acessibilidade e UX. Core Web Vitals no verde, sempre.</p><div class="tg"><i>React</i><i>TypeScript</i><i>Next.js</i><i>Tailwind</i></div></div>
+    <div class="sc"><p class="eye">02 / back-end</p><h2>APIs que <i>escalam</i> sem drama</h2><p>Node, NestJS e Python. REST, GraphQL e WebSockets, com filas, idempotência e observabilidade desde o primeiro deploy.</p><div class="tg"><i>Node.js</i><i>NestJS</i><i>FastAPI</i><i>GraphQL</i></div></div>
+    <div class="sc"><p class="eye">03 / dados</p><h2>Dados <i>modelados</i> com intenção</h2><p>PostgreSQL, Redis e Prisma. Índices certos, migrações seguras e consultas que respondem em milissegundos.</p><div class="tg"><i>PostgreSQL</i><i>Redis</i><i>Prisma</i><i>MongoDB</i></div></div>
+    <div class="sc"><p class="eye">04 / infra</p><h2>Deploy sem <i>medo</i> de sexta</h2><p>Docker, AWS e CI/CD com testes automáticos, deploys sem downtime e monitoramento que avisa antes do usuário.</p><div class="tg"><i>Docker</i><i>AWS</i><i>GitHub Actions</i><i>Playwright</i></div></div>
   </div>
+  <div class="vz">
+    <div class="pn"><div class="bw"><div class="bb"><u></u><u></u><u></u><em>app.nimbus.dev</em></div><div class="bc"><div class="kp"><b>R$ 48k</b><span>receita</span></div><div class="kp"><b>2.1k</b><span>usuários</span></div><div class="kp"><b>99.9%</b><span>uptime</span></div><div class="ch"><b style="--h:35%"></b><b style="--h:55%"></b><b style="--h:42%"></b><b style="--h:78%"></b><b style="--h:62%"></b><b style="--h:92%"></b><b style="--h:70%"></b></div></div></div></div>
+    <div class="pn"><div class="tm"><span style="--i:0"><b>$</b> curl -X POST api.orbit.dev/v1/orders</span><span style="--i:1">→ payload validado com <u>zod</u> ✓</span><span style="--i:2">→ job enfileirado no <u>redis</u> ✓</span><span style="--i:3">→ webhook assinado e enviado ✓</span><span style="--i:4">{ "status": "<b>created</b>", "ms": 38 }</span></div></div>
+    <div class="pn"><div class="db"><div class="tb"><h5>users</h5>id <u>uuid pk</u><br>email <u>text unique</u><br>created_at <u>timestamptz</u></div><div class="lk">1 ── ∞</div><div class="tb"><h5>orders</h5>id <u>uuid pk</u><br>user_id <u>fk → users</u><br>total <u>numeric</u></div></div></div>
+    <div class="pn"><div class="pp"><div style="--i:0"><span>● commit</span><em>feat: pagamentos</em></div><div style="--i:1"><span>● testes</span><em>214 passaram ✓</em></div><div style="--i:2"><span>● build docker</span><em>41s ✓</em></div><div style="--i:3"><span>● deploy produção</span><em>0 downtime ✓</em></div></div></div>
+  </div>
+  <div class="rail"><div><span>front-end</span><i></i></div><div><span>back-end</span><i></i></div><div><span>dados</span><i></i></div><div><span>infra</span><i></i></div></div>
+</div></section>
+
+<section id="work"><div class="pin wk">
+  <div class="wh"><h2>Trabalho <i>selecionado</i></h2><span id="cnt">01 / 04</span></div>
+  <div class="track">
+    <article class="card"><div class="vis"><div class="dash"><b style="--h:35%"></b><b style="--h:55%"></b><b style="--h:42%"></b><b style="--h:78%"></b><b style="--h:62%"></b><b style="--h:92%"></b></div></div><div class="info"><h3>Nimbus — SaaS de gestão</h3><p>Painel multiempresa com métricas em tempo real, permissões por papel e relatórios exportáveis.</p><div class="met"><b>-38%</b> tempo de relatório · <b>2k</b> usuários</div><div class="tg"><i>React</i><i>NestJS</i><i>PostgreSQL</i></div><div class="ln"><a href="#">Case ↗</a><a href="#">Código ↗</a><a href="#">Demo ↗</a></div></div></article>
+    <article class="card"><div class="vis"><div class="tm s"><span><b>$</b> curl api.orbit.dev/v1/charges
+{ "status": "<b>succeeded</b>",
+  "latency_ms": 38 }</span></div></div><div class="info"><h3>Orbit — API de pagamentos</h3><p>REST com idempotência, filas, webhooks assinados e observabilidade. Documentada com OpenAPI.</p><div class="met"><b>38ms</b> p95 · <b>99.9%</b> uptime</div><div class="tg"><i>Node.js</i><i>Redis</i><i>Docker</i><i>AWS</i></div><div class="ln"><a href="#">Case ↗</a><a href="#">Código ↗</a><a href="#">Docs ↗</a></div></div></article>
+    <article class="card"><div class="vis"><div class="eq"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i></div></div><div class="info"><h3>Pulse — áudio em tempo real</h3><p>Salas ao vivo com chat e presença via WebSockets, escalando horizontalmente com pub/sub.</p><div class="met"><b>5k</b> conexões · <b>120ms</b> de delay</div><div class="tg"><i>Next.js</i><i>WebSockets</i><i>Redis</i></div><div class="ln"><a href="#">Case ↗</a><a href="#">Código ↗</a><a href="#">Demo ↗</a></div></div></article>
+    <article class="card"><div class="vis"><div class="ds"><span class="p">Button</span><span>Input</span><span>Toggle</span><span>Modal</span><span class="p">Tooltip</span><span>Table</span></div></div><div class="info"><h3>Atlas — Design System</h3><p>Componentes acessíveis com tokens, tema claro/escuro e Storybook, usados por 4 squads.</p><div class="met"><b>60+</b> componentes · <b>100%</b> a11y</div><div class="tg"><i>React</i><i>TypeScript</i><i>Storybook</i></div><div class="ln"><a href="#">Case ↗</a><a href="#">Código ↗</a><a href="#">Storybook ↗</a></div></div></article>
+    <a class="card cta2" href="https://github.com" target="_blank" rel="noopener"><h3>Mais projetos no GitHub ↗</h3><p>Open source, experimentos e estudos.</p></a>
+  </div>
+  <div class="wb"></div>
+</div></section>
+
+<section id="exp" class="n w">
+  <p class="eye rv">05 / experiência</p><h2 class="rv">Trajetória</h2>
+  <div class="r rv"><span>2024 — hoje</span><div><h3>Dev Full Stack Sênior · Empresa X</h3><p>Liderança técnica de produto SaaS: arquitetura, code review, performance e mentoria.</p></div></div>
+  <div class="r rv"><span>2022 — 2024</span><div><h3>Dev Full Stack · Empresa Y</h3><p>APIs em Node e interfaces em React para fintech; reduzi o tempo de resposta em 60%.</p></div></div>
+  <div class="r rv"><span>2020 — 2022</span><div><h3>Dev Front-end · Empresa Z</h3><p>Primeiros produtos em React e TypeScript, com foco em acessibilidade e design system.</p></div></div>
+</section>
+<section id="contact" class="n w">
+  <p class="eye rv">06 / contato</p><h2 class="rv">Vamos construir algo <i>juntos</i>?</h2>
+  <a class="m rv" href="mailto:ola@seunome.dev">ola@seunome.dev</a>
+  <div class="cta rv"><button class="btn p" id="cp">Copiar e-mail</button><a class="btn" href="#">Baixar currículo ↓</a></div>
+  <footer><span>© 2026 Seu Nome</span><span>Feito com TypeScript e café</span></footer>
 </section>
 
-<!-- ══ CONTACT ══ -->
-<section id="contact">
-  <div class="page">
-    <p class="sec-label">Contato</p>
-    <h2 class="sec-title">Gostou do meu trabalho?</h2>
-    <div class="contact-wrap">
-      <p class="contact-lead">Entre em contato ou acompanhe as minhas redes sociais!</p>
-      <div class="contact-list">
-
-        <a href="https://www.linkedin.com/in/eduardo-mucio-968a763b2/" target="_blank" class="c-link reveal">
-          <div class="c-link-l">
-            <div class="c-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <span class="c-name">LinkedIn</span>
-          </div>
-          <span class="c-arrow">↗</span>
-        </a>
-
-        <a href="https://instagram.com" target="_blank" class="c-link reveal">
-          <div class="c-link-l">
-            <div class="c-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="url(#ig2)">
-                <defs><linearGradient id="ig2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs>
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-              </svg>
-            </div>
-            <span class="c-name">Instagram</span>
-          </div>
-          <span class="c-arrow">↗</span>
-        </a>
-
-        <a href="https://github.com/Duduxpz/" target="_blank" class="c-link reveal">
-          <div class="c-link-l">
-            <div class="c-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#e2e8f0"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            </div>
-            <span class="c-name">GitHub</span>
-          </div>
-          <span class="c-arrow">↗</span>
-        </a>
-
-        <a href="https://wa.me/" target="_blank" class="c-link reveal">
-          <div class="c-link-l">
-            <div class="c-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-</svg>
-            </div>
-            <span class="c-name">WhatsApp</span>
-          </div>
-          <span class="c-arrow">↗</span>
-        </a>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="page">
-    <span style="color:var(--blue-bright)">// </span>feito com ♥ por <span style="color:var(--blue-bright)">Dudu</span> &mdash; 2026
-  </div>
-</footer>
-
-<!-- Modal -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="close-btn" onclick="closeModal()">&times;</button>
-    
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="browser-url" id="browserUrl"></div>
-    </div>
-
-    <img id="modalScreenshot" src="" alt="Screenshot" class="modal-screenshot">
-
-    <div class="modal-body">
-      <h2 class="modal-title" id="modalTitle"></h2>
-      <p id="modalDesc"></p>
-      
-      <div class="modal-tags" id="modalTags"></div>
-      
-      <div class="modal-actions">
-        <a id="demoBtn" href="" target="_blank" class="btn-demo">Ver site</a>
-        <a id="ghBtn" href="" target="_blank" class="btn-gh">GitHub</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script src="js/script.js" defer></script>
-<script src="js/modal.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>
